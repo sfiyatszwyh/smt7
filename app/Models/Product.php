@@ -13,10 +13,11 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
+        'category_id',
         'name',
         'price',
         'stock',
-        'category'
+        
     ];
     public function transactionDetail()
     {
