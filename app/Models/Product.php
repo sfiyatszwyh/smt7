@@ -26,4 +26,8 @@ class Product extends Model
     {
         return $this->hasMany(StockLog::class, 'product_id');
     }
+    public function category()
+    {
+        return $this->hasMany(Category::class, 'product_id');
+    }
 }

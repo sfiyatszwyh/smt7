@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -57,3 +58,9 @@ Route::get('/stock/{id}', [StockLogController::class,'show']);
 Route::post('/stock', [StockLogController::class,'store']);
 Route::patch('/stock/{id}', [StockLogController::class,'update']);
 Route::delete('/stock/{id}', [StockLogController::class,'destroy']);
+
+Route::get('/cat', [CategoryController::class,'index']);
+Route::get('/cat/{id}', [CategoryController::class,'show']);
+Route::post('/cat', [CategoryController::class,'store']);
+Route::patch('/cat/{id}', [CategoryController::class,'update']);
+Route::delete('/cat/{id}', [CategoryController::class,'destroy']);
