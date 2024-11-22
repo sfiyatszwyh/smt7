@@ -8,7 +8,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\StockLogController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
-
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +64,11 @@ Route::get('/cat/{id}', [CategoryController::class,'show']);
 Route::post('/cat', [CategoryController::class,'store']);
 Route::patch('/cat/{id}', [CategoryController::class,'update']);
 Route::delete('/cat/{id}', [CategoryController::class,'destroy']);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::delete('/delete', [AuthController::class, 'delete']);
+});
