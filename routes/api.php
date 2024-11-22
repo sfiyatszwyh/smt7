@@ -32,7 +32,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/product', [ProductController::class,'index']);
 Route::get('/product/{id}', [ProductController::class,'show']);
 Route::post('/product', [ProductController::class,'store']);
-Route::patch('/product/{id}', [ProductController::class,'update']);
+Route::put('/product/{id}', [ProductController::class,'update']);
 Route::delete('/product/{id}', [ProductController::class,'destroy']);
 
 Route::get('/transaction', [TransactionController::class,'index']);
@@ -50,7 +50,7 @@ Route::delete('/transaction_detail/{id}', [TransactionDetailController::class,'d
 Route::get('/customer', [CustomerController::class,'index']);
 Route::get('/customer/{id}', [CustomerController::class,'show']);
 Route::post('/customer', [CustomerController::class,'store']);
-Route::patch('/customer/{id}', [CustomerController::class,'update']);
+Route::put('/customer/{id}', [CustomerController::class,'update']);
 Route::delete('/customer/{id}', [CustomerController::class,'destroy']);
 
 Route::get('/stock', [StockLogController::class,'index']);
